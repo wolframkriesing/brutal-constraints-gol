@@ -6,13 +6,16 @@ describe('test setup works?', function() {
   });
 });
 
+function tick() {
+  return {};
+}
 describe('game of life', function() {
   it('an empty universe is empty in the next generation', function() {
     let universe = {
       
     };
     
-    let nextGeneration = universe;
+    let nextGeneration = tick();
     
     assert.deepEqual(nextGeneration, {});
   });
@@ -22,7 +25,7 @@ describe('game of life', function() {
       oneCell: {}
     };
 
-    let nextGeneration = {};
+    let nextGeneration = tick();
     
     assert.deepEqual(nextGeneration, {});
   });
