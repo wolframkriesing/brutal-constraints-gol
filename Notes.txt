@@ -25,3 +25,16 @@ This is a feature of TDD.
 We can tag commit messages like twitter by
 using hashtags in the sentences.
 
+Retro 18.9.2015
+* progress is very slow
+* good discussions
+* TDDaiymi is forcing us to simplicity
+* but TDDaiymi maybe gives us unexpected outcome
+* collaboration is great
+* no problems in getting into pairing
+* network lag keeps Peter in check
+* looks like we are getting somewhere
+
+Vision is that we have a copy with two cells
+and so forth and in the end wi combine all
+the methods to a complete solution.
