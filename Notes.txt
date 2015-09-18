@@ -15,3 +15,13 @@ at the screen at once.
 Look at Ralph Westphal TDDAITM from start through
 end really helpful. Doing wordwrap.
 http://www.youtube.com/watch?v=CWnpVAf_340
+
+Commit messages should have a nice message and
+tell the story. We use whole sentences. But
+the story is not so "nice" becaus we need to
+mix technical and domain changes during work.
+This is a feature of TDD.
+
+We can tag commit messages like twitter by
+using hashtags in the sentences.
+
