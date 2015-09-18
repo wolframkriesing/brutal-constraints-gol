@@ -12,3 +12,6 @@ Wolfram says he wants a big font because
 he is not sure he can understand 100 loc
 at the screen at once.
 
+Look at Ralph Westphal TDDAITM from start through
+end really helpful. Doing wordwrap.
+http://www.youtube.com/watch?v=CWnpVAf_340
