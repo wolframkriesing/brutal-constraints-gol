@@ -9,6 +9,9 @@ describe('test setup works?', function() {
 function tick() {
   return {};
 }
+function newUniverseWithOneCellFrom(universe, positionName) {
+  return {[positionName]: universe[positionName]};
+}
 describe('universe', function() {
   describe('next generation', function() {
     it('of empty universe is empty', function() {
@@ -40,7 +43,7 @@ describe('universe', function() {
         pos3: { x:2, y:2 }
       };
       
-      let nextGeneration = {pos1: universe.pos1};
+      let nextGeneration = newUniverseWithOneCellFrom(universe, 'pos1');
       
       assert.deepEqual(nextGeneration, {pos1: {x: 1, y: 1}});
     });
@@ -51,8 +54,8 @@ describe('universe', function() {
         pos2: { x:1, y:1 },
         pos3: { x:2, y:2 }
       };
-      
-      let nextGeneration = {pos2: universe.pos2};
+
+      let nextGeneration = newUniverseWithOneCellFrom(universe, 'pos2');
       
       assert.deepEqual(nextGeneration, {pos2: {x: 1, y: 1}});
     });
