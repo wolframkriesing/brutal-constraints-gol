@@ -1,0 +1,27 @@
+{
+  "name": "brutal-constraints-gol",
+  "version": "1.0.0",
+  "description": "Game of Life with Brutal Coding Constraints",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --compilers js:babel/register"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wolframkriesing/brutal-constraints-gol.git"
+  },
+  "keywords": [
+    "brutal",
+    "constraints"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wolframkriesing/brutal-constraints-gol/issues"
+  },
+  "homepage": "https://github.com/wolframkriesing/brutal-constraints-gol#readme",
+  "devDependencies": {
+    "babel": "^5.8.23",
+    "mocha": "^2.3.2"
+  }
+}
