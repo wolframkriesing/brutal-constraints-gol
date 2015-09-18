@@ -7,57 +7,62 @@ describe('test setup works?', function() {
 });
 
 function tick() {
-  return {};
+  return { positions:[] };
 }
-function newUniverseWithOneCellFrom(universe, positionName) {
-  return {[positionName]: universe[positionName]};
+function newUniverseWithOneCellFrom(universe, position) {
+  return {positions: [universe.positions[position]]};
 }
 describe('universe', function() {
   describe('next generation', function() {
     it('of empty universe is empty', function() {
       let universe = {
-        
+        positions: []
       };
       
       let nextGeneration = tick();
       
-      assert.deepEqual(nextGeneration, {});
+      assert.deepEqual(nextGeneration, { positions:[] });
     });
   
     it('of one cell is empty', function() {
       let universe = {
-        pos1: {}
+        positions: [{}]
       };
   
       let nextGeneration = tick();
       
-      assert.deepEqual(nextGeneration, {});
+      assert.deepEqual(nextGeneration, { positions:[] } );
     });
   
     // first step to think of universe as single cell because only one cells
     // survives and we place other cells accordingly.
     it('of three diagonal cells contains middle cell', function() {
       let universe = {
-        pos1: {x: 1, y: 1},
-        pos2: { x:0, y:0 },
-        pos3: { x:2, y:2 }
+        positions: [
+          { x:1, y:1 },
+          { x:0, y:0 },
+          { x:2, y:2 }
+        ]
       };
+
+      let positionName = 0;
+      let nextGeneration = newUniverseWithOneCellFrom(universe, positionName);
       
-      let nextGeneration = newUniverseWithOneCellFrom(universe, 'pos1');
-      
-      assert.deepEqual(nextGeneration, {pos1: {x: 1, y: 1}});
+      assert.deepEqual(nextGeneration, {positions: [{x: 1, y: 1}]});
     });
   
     it('of three diagonal2 cells contains middle cell', function() {
       let universe = {
-        pos1: { x:0, y:0 },
-        pos2: { x:1, y:1 },
-        pos3: { x:2, y:2 }
+        positions: [
+          { x:0, y:0 },
+          { x:1, y:1 },
+          { x:2, y:2 }
+        ]
       };
 
-      let nextGeneration = newUniverseWithOneCellFrom(universe, 'pos2');
+      let nextGeneration = newUniverseWithOneCellFrom(universe, 1);
       
-      assert.deepEqual(nextGeneration, {pos2: {x: 1, y: 1}});
+      assert.deepEqual(nextGeneration, {positions: [{x: 1, y: 1}]});
     });
   });
 });
