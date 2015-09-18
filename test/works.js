@@ -23,7 +23,7 @@ describe('universe', function() {
   
     it('of one cell is empty', function() {
       let universe = {
-        oneCell: {}
+        pos1: {}
       };
   
       let nextGeneration = tick();
@@ -33,15 +33,15 @@ describe('universe', function() {
   
     it('of three diagonal cells contains middle cell', function() {
       let universe = {
-        oneCell: { x:1, y:1 },
-        oneCell2: { x:0, y:0 },
-        third: { x:2, y:2}
+        pos1: { x:1, y:1 },
+        pos2: { x:0, y:0 },
+        pos3: { x:2, y:2}
       };
   
-      let nextGeneration = {oneCell: {x: 1, y: 1}};
+      let nextGeneration = {pos1: {x: 1, y: 1}};
       
       assert.deepEqual(nextGeneration, {
-        oneCell: {x: 1, y: 1}
+        pos1: {x: 1, y: 1}
       });
     });
   });
