@@ -29,4 +29,18 @@ describe('game of life', function() {
     
     assert.deepEqual(nextGeneration, {});
   });
+
+  it('a universe with three diagonal cells lets one survive in the next generation', function() {
+    let universe = {
+      oneCell: { x:1, y:1 },
+      oneCell2: { x:0, y:0 },
+      third: { x:2, y:2}
+    };
+
+    let nextGeneration = {oneCell: {x: 1, y: 1}};
+    
+    assert.deepEqual(nextGeneration, {
+      oneCell: {x: 1, y: 1}
+    });
+  });
 });
