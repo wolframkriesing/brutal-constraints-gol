@@ -33,16 +33,14 @@ describe('universe', function() {
   
     it('of three diagonal cells contains middle cell', function() {
       let universe = {
-        pos1: { x:1, y:1 },
+        pos1: {x: 1, y: 1},
         pos2: { x:0, y:0 },
-        pos3: { x:2, y:2}
+        pos3: { x:2, y:2 }
       };
-  
-      let nextGeneration = {pos1: {x: 1, y: 1}};
       
-      assert.deepEqual(nextGeneration, {
-        pos1: {x: 1, y: 1}
-      });
+      let nextGeneration = {pos1: universe.pos1};
+      
+      assert.deepEqual(nextGeneration, {pos1: {x: 1, y: 1}});
     });
   });
 });
