@@ -8,3 +8,7 @@ Brutal Coding Constraints
 5 No void
 6 Immutable
 
+Wolfram says he wants a big font because
+he is not sure he can understand 100 loc
+at the screen at once.
+
