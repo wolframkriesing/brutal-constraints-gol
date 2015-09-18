@@ -1,0 +1,10 @@
+Brutal Coding Constraints
+--------------------------
+
+1 No Conditionals
+2 No Loops
+3 TTDaiymi
+4 No Naked Primitives
+5 No void
+6 Immutable
+
