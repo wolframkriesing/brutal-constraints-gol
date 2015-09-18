@@ -16,4 +16,14 @@ describe('game of life', function() {
     
     assert.deepEqual(nextGeneration, {});
   });
+
+  it('a universe of one cell is empty in next generation', function() {
+    let universe = {
+      oneCell: {}
+    };
+
+    let nextGeneration = {};
+    
+    assert.deepEqual(nextGeneration, {});
+  });
 });
