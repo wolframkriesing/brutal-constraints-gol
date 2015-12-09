@@ -45,8 +45,8 @@ describe('universe', function() {
         ]
       };
 
-      let positionName = 0;
-      let nextGeneration = newUniverseWithOneCellFrom(universe, positionName);
+      let positionIndex = 0;
+      let nextGeneration = newUniverseWithOneCellFrom(universe, positionIndex);
       
       assert.deepEqual(nextGeneration, {positions: [{x: 1, y: 1}]});
     });
@@ -63,7 +63,8 @@ describe('universe', function() {
       // TODO we need to determine 1 from the universe somehow. this is the
       // rule for survival. then we can extract 49 and 66 into new tick method
       // and combine with existing one. maybe <- ;-)
-      let nextGeneration = newUniverseWithOneCellFrom(universe, 1);
+      let positionIndex = 1;
+      let nextGeneration = newUniverseWithOneCellFrom(universe, positionIndex);
       
       assert.deepEqual(nextGeneration, {positions: [{x: 1, y: 1}]});
     });
@@ -77,7 +78,8 @@ describe('universe', function() {
         ]
       };
 
-      let nextGeneration = newUniverseWithOneCellFrom(universe, 2);
+      let positionIndex = 2;
+      let nextGeneration = newUniverseWithOneCellFrom(universe, positionIndex);
       
       assert.deepEqual(nextGeneration, {positions: [{x: 1, y: 1}]});
     });

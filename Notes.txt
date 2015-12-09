@@ -44,7 +44,12 @@ Retro 09.12.2015
 ----------------
 * keine Ahnung was hier los ist
 * Keymappings darf man nicht ummappen!
-* 
+* Wolfram is not happy with test names, they give no clue
+* We do not see the direction of the design we wanted to 
+  drive using the tests. We only see the test cases. Where 
+  did we want to go with this?
+  Maybe applies alsop to real TDD, e.g. scaffolding test.
+* s
 
 Wir haben zuerst outside-in begonnen. (`tick`)
 Das sind die ersten beiden Tests.
