@@ -6,9 +6,9 @@ describe('test setup works?', function() {
   });
 });
 
-class Universe {
-  static withPositions(positions) {
-    const universe = new Universe();
+class Positions {
+  static of(positions) {
+    const universe = new Positions();
     universe.positions = positions;
     return universe;
   }
@@ -50,30 +50,33 @@ describe('universe', function() {
     // first step to think of universe as single cell because only one cell
     // survives and we place other cells accordingly.
     it('of three diagonal cells contains middle cell', function() {
-      let universe = Universe.withPositions([
+      let positions = Positions.of([
         { x:51, y:51 }, // TODO the position is duplicated 3 times, extract
         { x:50, y:50 },
         { x:52, y:52 }
       ]);
-      let surviverIndex = universe.indexOf({x: 51, y: 51});
-      let nextGeneration = newUniverseWithOneCellFrom(universe, surviverIndex);
+      let surviverIndex = positions.indexOf({x: 51, y: 51});
+      let nextGeneration = newUniverseWithOneCellFrom(positions, surviverIndex);
       
       assert.deepEqual(nextGeneration, {positions: [{x: 51, y: 51}]});
     });
   
     it('of three diagonal cells (in different order) contains middle cell', function() {
-      let universe = Universe.withPositions([
+      let positions = Positions.of([
         { x:0, y:0 },
         { x:1, y:1 },
         { x:2, y:2 }
       ]);
 
-      let surviverIndex = universe.indexOf({x: 1, y: 1});
+      // TODO `Positions` or `Universe` ? one is more domain
+      // but a Universe doesnt need an `indexOf()`
+      
+      let surviverIndex = positions.indexOf({x: 1, y: 1});
 
       // TODO we need to determine why (1.1) from the universe somehow. this is the
       // rule for survival. then we can extract test 2+4 into new tick method
       // and combine with existing one. maybe <- ;-)
-      let nextGeneration = newUniverseWithOneCellFrom(universe, surviverIndex);
+      let nextGeneration = newUniverseWithOneCellFrom(positions, surviverIndex);
       
       assert.deepEqual(nextGeneration, {positions: [{x: 1, y: 1}]});
     });

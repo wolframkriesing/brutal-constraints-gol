@@ -45,14 +45,23 @@ Retro 09.12.2015
 * keine Ahnung was hier los ist
 * Keymappings darf man nicht ummappen!
 * Wolfram is not happy with test names, they give no clue
-* We do not see the direction of the design we wanted to 
-  drive using the tests. We only see the test cases. Where 
-  did we want to go with this?
-  Maybe applies alsop to real TDD, e.g. scaffolding test.
-* s
 
 Wir haben zuerst outside-in begonnen. (`tick`)
 Das sind die ersten beiden Tests.
 Dann wollten wir eine Zelle überleben lassen.
 Der gemeinsame Code (Duplication) hat eine Methode erzeugt.
 Diese Methode ist nicht mehr `tick`, sondern ein Teil davon.
+
+* We do not see the direction of the design we wanted to 
+  drive using the tests. We only see the test cases. Where 
+  did we want to go with this?
+  Maybe applies alsop to real TDD, e.g. scaffolding test.
+* We saw some low level duplication and it created the 
+  `indexOf`. Now we have duplication in cells instead of
+  indices. We moved more into domain.
+* Again the TODOs 54 and 73 lead the way.
+* TDDaiymi shows that the things we name are something different.
+* TDDaiymi is difficult for outside-in - or it reflects our mindset.
+
+* needed 1 Pomodoro for understanding, then good progress
+* again it feels like progress, but we do not see it yet ;-)
