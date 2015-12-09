@@ -62,17 +62,16 @@ describe('universe', function() {
           { x:2, y:2 }
         ]
       };
-      let xToFind = 1;
-      let yToFind = 1;
-
-      universe.findCell = function(xToFind, yToFind) {
+      universe.indexOf = function({x, y}) {
         return this.positions
-          .map((cell, index) => cell.x == xToFind && cell.y == yToFind ? index : -1)
+          .map((position, index) => position.x == x && position.y == y ? index : -1)
           .filter(index => index > -1)
           [0];
       };
 
-      let surviverIndex = universe.findCell(xToFind, yToFind);
+      let xToFind = 1;
+      let yToFind = 1;
+      let surviverIndex = universe.indexOf({x: xToFind, y: yToFind});
       // universe.positions[surviverIndex] = {x:1, y:1};
 
       // TODO we need to determine 1 from the universe somehow. this is the
