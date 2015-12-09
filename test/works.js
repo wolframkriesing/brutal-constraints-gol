@@ -39,16 +39,19 @@ describe('universe', function() {
     it('of three diagonal cells contains middle cell', function() {
       let universe = {
         positions: [
-          { x:1, y:1 }, // TODO the position is duplicated many times, extract
-          { x:0, y:0 },
-          { x:2, y:2 }
+          { x:51, y:51 }, // TODO the position is duplicated many times, extract
+          { x:50, y:50 },
+          { x:52, y:52 }
         ]
       };
 
-      let positionIndex = 0;
-      let nextGeneration = newUniverseWithOneCellFrom(universe, positionIndex);
+      let surviverIndex = universe.positions
+        .map((cell, index) => cell.x == 51 && cell.y == 51 ? index : -1)
+        .filter(index => index > -1)
+        [0];
+      let nextGeneration = newUniverseWithOneCellFrom(universe, surviverIndex);
       
-      assert.deepEqual(nextGeneration, {positions: [{x: 1, y: 1}]});
+      assert.deepEqual(nextGeneration, {positions: [{x: 51, y: 51}]});
     });
   
     it('of three diagonal cells (in different order) contains middle cell', function() {
