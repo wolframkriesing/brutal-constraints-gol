@@ -76,21 +76,6 @@ describe('universe', function() {
       
       assert.deepEqual(nextGeneration, {positions: [{x: 1, y: 1}]});
     });
-    
-    it('of three diagonal cells (in another order) contains middle cell', function() {
-      let universe = {
-        positions: [
-          { x:0, y:0 },
-          { x:2, y:2 },
-          { x:1, y:1 }
-        ]
-      };
-
-      // TODO positionIndex is the index that has two neighbours
-      let positionIndex = 2;
-      let nextGeneration = newUniverseWithOneCellFrom(universe, positionIndex);
-      
-      assert.deepEqual(nextGeneration, {positions: [{x: 1, y: 1}]});
-    });
+ 
   });
 });
