@@ -51,7 +51,7 @@ describe('universe', function() {
     // survives and we place other cells accordingly.
     it('of three diagonal cells contains middle cell', function() {
       let universe = Universe.withPositions([
-        { x:51, y:51 }, // TODO the position is duplicated many times, extract
+        { x:51, y:51 }, // TODO the position is duplicated 3 times, extract
         { x:50, y:50 },
         { x:52, y:52 }
       ]);
@@ -68,13 +68,10 @@ describe('universe', function() {
         { x:2, y:2 }
       ]);
 
-      let xToFind = 1;
-      let yToFind = 1;
-      let surviverIndex = universe.indexOf({x: xToFind, y: yToFind});
-      // universe.positions[surviverIndex] = {x:1, y:1};
+      let surviverIndex = universe.indexOf({x: 1, y: 1});
 
-      // TODO we need to determine 1 from the universe somehow. this is the
-      // rule for survival. then we can extract 49 and 66 into new tick method
+      // TODO we need to determine why (1.1) from the universe somehow. this is the
+      // rule for survival. then we can extract test 2+4 into new tick method
       // and combine with existing one. maybe <- ;-)
       let nextGeneration = newUniverseWithOneCellFrom(universe, surviverIndex);
       
