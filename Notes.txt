@@ -12,7 +12,7 @@ Wolfram says he wants a big font because
 he is not sure he can understand 100 loc
 at the screen at once.
 
-Look at Ralph Westphal TDDAITM from start through
+Look at Ralph Westphal TDDaiymi from start through
 end really helpful. Doing wordwrap.
 http://www.youtube.com/watch?v=CWnpVAf_340
 
@@ -26,6 +26,7 @@ We can tag commit messages like twitter by
 using hashtags in the sentences.
 
 Retro 18.9.2015
+---------------
 * progress is very slow
 * good discussions
 * TDDaiymi is forcing us to simplicity
@@ -36,5 +37,17 @@ Retro 18.9.2015
 * looks like we are getting somewhere
 
 Vision is that we have a copy with two cells
-and so forth and in the end wi combine all
+and so forth and in the end we combine all
 the methods to a complete solution.
+
+Retro 09.12.2015
+----------------
+* keine Ahnung was hier los ist
+* Keymappings darf man nicht ummappen!
+* 
+
+Wir haben zuerst outside-in begonnen. (`tick`)
+Das sind die ersten beiden Tests.
+Dann wollten wir eine Zelle überleben lassen.
+Der gemeinsame Code (Duplication) hat eine Methode erzeugt.
+Diese Methode ist nicht mehr `tick`, sondern ein Teil davon.
