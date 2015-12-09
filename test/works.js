@@ -37,18 +37,25 @@ describe('universe', function() {
     // first step to think of universe as single cell because only one cell
     // survives and we place other cells accordingly.
     it('of three diagonal cells contains middle cell', function() {
-      let universe = {
-        positions: [
-          { x:51, y:51 }, // TODO the position is duplicated many times, extract
-          { x:50, y:50 },
-          { x:52, y:52 }
-        ]
-      };
-
-      let surviverIndex = universe.positions
-        .map((cell, index) => cell.x == 51 && cell.y == 51 ? index : -1)
-        .filter(index => index > -1)
-        [0];
+      class Universe {
+        static withPositions(positions) {
+          const universe = new Universe();
+          universe.positions = positions;
+          return universe;
+        }
+        indexOf({x, y}) {
+          return this.positions
+            .map((position, index) => position.x == x && position.y == y ? index : -1)
+            .filter(index => index > -1)
+            [0];
+        }
+      }
+      let universe = Universe.withPositions([
+        { x:51, y:51 }, // TODO the position is duplicated many times, extract
+        { x:50, y:50 },
+        { x:52, y:52 }
+      ]);
+      let surviverIndex = universe.indexOf({x: 51, y: 51});
       let nextGeneration = newUniverseWithOneCellFrom(universe, surviverIndex);
       
       assert.deepEqual(nextGeneration, {positions: [{x: 51, y: 51}]});
@@ -60,7 +67,7 @@ describe('universe', function() {
           { x:0, y:0 },
           { x:1, y:1 },
           { x:2, y:2 }
-        ]
+        ] 
       };
       universe.indexOf = function({x, y}) {
         return this.positions
