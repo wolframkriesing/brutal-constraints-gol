@@ -6,6 +6,19 @@ describe('test setup works?', function() {
   });
 });
 
+class Universe {
+  static withPositions(positions) {
+    const universe = new Universe();
+    universe.positions = positions;
+    return universe;
+  }
+  indexOf({x, y}) {
+    return this.positions
+      .map((position, index) => position.x == x && position.y == y ? index : -1)
+      .filter(index => index > -1)
+      [0];
+  }
+}
 function tick() {
   return { positions:[] };
 }
@@ -37,19 +50,6 @@ describe('universe', function() {
     // first step to think of universe as single cell because only one cell
     // survives and we place other cells accordingly.
     it('of three diagonal cells contains middle cell', function() {
-      class Universe {
-        static withPositions(positions) {
-          const universe = new Universe();
-          universe.positions = positions;
-          return universe;
-        }
-        indexOf({x, y}) {
-          return this.positions
-            .map((position, index) => position.x == x && position.y == y ? index : -1)
-            .filter(index => index > -1)
-            [0];
-        }
-      }
       let universe = Universe.withPositions([
         { x:51, y:51 }, // TODO the position is duplicated many times, extract
         { x:50, y:50 },
@@ -62,19 +62,11 @@ describe('universe', function() {
     });
   
     it('of three diagonal cells (in different order) contains middle cell', function() {
-      let universe = {
-        positions: [
-          { x:0, y:0 },
-          { x:1, y:1 },
-          { x:2, y:2 }
-        ] 
-      };
-      universe.indexOf = function({x, y}) {
-        return this.positions
-          .map((position, index) => position.x == x && position.y == y ? index : -1)
-          .filter(index => index > -1)
-          [0];
-      };
+      let universe = Universe.withPositions([
+        { x:0, y:0 },
+        { x:1, y:1 },
+        { x:2, y:2 }
+      ]);
 
       let xToFind = 1;
       let yToFind = 1;
@@ -84,8 +76,7 @@ describe('universe', function() {
       // TODO we need to determine 1 from the universe somehow. this is the
       // rule for survival. then we can extract 49 and 66 into new tick method
       // and combine with existing one. maybe <- ;-)
-      let positionIndex = surviverIndex;
-      let nextGeneration = newUniverseWithOneCellFrom(universe, positionIndex);
+      let nextGeneration = newUniverseWithOneCellFrom(universe, surviverIndex);
       
       assert.deepEqual(nextGeneration, {positions: [{x: 1, y: 1}]});
     });
